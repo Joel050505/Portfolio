@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import { FaGithubSquare, FaTwitterSquare, FaLinkedin } from "react-icons/fa";
 import Link from "next/link";
 
 import Footer from "./components/footer";
@@ -7,7 +7,7 @@ import Footer from "./components/footer";
 export default function Home() {
   return (
     <div>
-      <div className="flex justify-center items-center gap-20 mt-10 mb-28 bg-gray-50">
+      <div className="md:flex-row flex-col flex justify-center items-center gap-20 mt-10 mb-28 bg-gray-50">
         <div className="flex flex-col gap-2">
           {" "}
           <h1 className="text-gray-800 font-bold text-5xl">
@@ -35,7 +35,35 @@ export default function Home() {
           />
         </div>
       </div>
-      <Footer />
+      <div className="flex justify-center flex-col gap-4 items-center w-full absolute bottom-0 pt-10">
+        <h4 className="text-2xl font-bold text-center text-gray-800">
+          Get in Touch
+        </h4>
+        <div className="text-center">
+          <p className="text-gray-700">
+            Interested in collaborating or have a project in mind? Feel free to
+            reach out!
+          </p>
+        </div>
+        <div className="flex gap-4">
+          <FaGithubSquare
+            size={35}
+            className="hover:text-gray-700 hover:cursor-pointer"
+          />
+          <FaLinkedin
+            size={35}
+            className="hover:text-gray-700 hover:cursor-pointer"
+          />
+
+          <FaTwitterSquare
+            size={35}
+            className="hover:text-gray-700 hover:cursor-pointer"
+          />
+        </div>
+        <div className="w-full bg-gray-700 text-white text-center p-4 font-bold">
+          © 2025 Joel Kilic. All Rights Reserved.
+        </div>
+      </div>
     </div>
   );
 }

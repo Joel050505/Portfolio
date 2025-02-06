@@ -6,9 +6,9 @@ import { FaGithubSquare, FaTwitterSquare, FaLinkedin } from "react-icons/fa";
 export default function AboutPage() {
   return (
     <div>
-      <div className="bg-gray-50 flex gap-6 justify-center mt-10 mb-48">
+      <div className="bg-gray-50 flex-col flex items-center sm:flex-row gap-6 justify-center mt-10 mb-48">
         {" "}
-        <div className="flex flex-col gap-4 w-4/12">
+        <div className="flex flex-col gap-4 w-6/12 sm:w-4/12">
           <h1 className="text-4xl font-bold text-gray-800">About Me</h1>
           <p>
             I'm a passionate developer with a love for creating innovative web
@@ -22,7 +22,7 @@ export default function AboutPage() {
             solutions.
           </p>
         </div>
-        <div className="shadow-md rounded-lg p-8 w-4/12 bg-white">
+        <div className="shadow-md rounded-lg p-8 w-7/12 sm:w-4/12 bg-white">
           <h2 className="text-xl mb-8 bg-white">Personal Details</h2>
 
           <div className="space-y-4 bg-white ">

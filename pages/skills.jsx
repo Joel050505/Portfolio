@@ -5,8 +5,8 @@ import { IoLogoJavascript } from "react-icons/io";
 export default function Skills() {
   return (
     <div>
-      <div className="mt-10 flex flex-col justify-center mb-20">
-        <div className="grid grid-cols-2 p-20 gap-10">
+      <div className="mt-10 sm:flex flex-col justify-center mb-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 p-20 gap-10">
           <div className="flex flex-col gap-2">
             <h2 className="text-3xl mb-8 text-gray-800 font-bold">
               Technical Skills
