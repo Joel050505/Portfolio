@@ -35,7 +35,7 @@ export default function Home() {
           />
         </div>
       </div>
-      <div className="flex justify-center flex-col gap-4 items-center w-full absolute bottom-0 pt-10">
+      <div className="flex justify-center flex-col gap-4 items-center w-full sticky sm:absolute bottom-0 pt-10">
         <h4 className="text-2xl font-bold text-center text-gray-800">
           Get in Touch
         </h4>
