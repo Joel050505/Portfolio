@@ -1,12 +1,10 @@
 import { useState } from "react";
-import { RiMenu3Fill } from "react-icons/ri";
-import Link from "next/link";
-import { CgProfile } from "react-icons/cg";
-import { RxCrossCircled } from "react-icons/rx";
+import { Menu, X, User } from "lucide-react";
 
 export default function Header() {
   const [activePage, SetActivePage] = useState("home");
   const [showModal, setShowModal] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [loggedIn, setLoggedIn] = useState(false);
 
   const credentials = {
@@ -33,111 +31,186 @@ export default function Header() {
 
   function handleClick(page) {
     SetActivePage(page);
+    setMobileMenuOpen(false);
   }
 
   return (
     <div>
-      <div className="p-4 flex justify-between shadow-lg items-center">
-        {" "}
-        <div className="pl-16">
-          <h1 className="text-2xl font-bold text-gray-800">Joel Kilic</h1>
-        </div>{" "}
-        <div className="flex space-x-6 items-center">
-          <Link
-            onClick={() => {
-              handleClick("home");
-            }}
-            className={`${
-              activePage === "home"
-                ? "text-blue-600 font-bold underline underline-offset-8"
-                : "text-black"
-            }`}
-            href="/home"
-          >
-            Home
-          </Link>
-          <Link
-            onClick={() => {
-              handleClick("about");
-            }}
-            className={`${
-              activePage === "about"
-                ? "text-blue-600 font-bold underline underline-offset-8"
-                : "text-black"
-            }`}
-            href="/about"
-          >
-            About
-          </Link>
-          <Link
-            onClick={() => {
-              handleClick("projects");
-            }}
-            className={`${
-              activePage === "projects"
-                ? "text-blue-600 font-bold underline underline-offset-8"
-                : "text-black"
-            }`}
-            href="/projects"
-          >
-            Projects
-          </Link>
-          <Link
-            onClick={() => {
-              handleClick("skills");
-            }}
-            className={`${
-              activePage === "skills"
-                ? "text-blue-600 font-bold underline underline-offset-8"
-                : "text-black"
-            }`}
-            href="/skills"
-          >
-            Skills
-          </Link>
-          <Link
-            onClick={() => {
-              handleClick("contact");
-            }}
-            className={`${
-              activePage === "contact"
-                ? "text-blue-600 font-bold underline underline-offset-8"
-                : "text-black"
-            }`}
-            href="/contact"
-          >
-            Contact
-          </Link>
+      <div className="p-4 shadow-lg">
+        <div className="flex justify-between items-center">
+          <div className="pl-4 md:pl-16">
+            <h1 className="text-xl md:text-2xl font-bold text-gray-800">
+              Joel Kilic
+            </h1>
+          </div>
+
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex space-x-6 items-center">
+            <a
+              onClick={() => handleClick("home")}
+              className={`${
+                activePage === "home"
+                  ? "text-blue-600 font-bold underline underline-offset-8"
+                  : "text-black"
+              }`}
+              href="/home"
+            >
+              Home
+            </a>
+            <a
+              onClick={() => handleClick("about")}
+              className={`${
+                activePage === "about"
+                  ? "text-blue-600 font-bold underline underline-offset-8"
+                  : "text-black"
+              }`}
+              href="/about"
+            >
+              About
+            </a>
+            <a
+              onClick={() => handleClick("projects")}
+              className={`${
+                activePage === "projects"
+                  ? "text-blue-600 font-bold underline underline-offset-8"
+                  : "text-black"
+              }`}
+              href="/projects"
+            >
+              Projects
+            </a>
+            <a
+              onClick={() => handleClick("skills")}
+              className={`${
+                activePage === "skills"
+                  ? "text-blue-600 font-bold underline underline-offset-8"
+                  : "text-black"
+              }`}
+              href="/skills"
+            >
+              Skills
+            </a>
+            <a
+              onClick={() => handleClick("contact")}
+              className={`${
+                activePage === "contact"
+                  ? "text-blue-600 font-bold underline underline-offset-8"
+                  : "text-black"
+              }`}
+              href="/contact"
+            >
+              Contact
+            </a>
+          </div>
+
+          {/* Desktop Actions */}
+          <div className="hidden md:flex items-center gap-10 pr-16">
+            <button className="p-2 bg-blue-600 text-white rounded-xl w-24 font-bold hover:bg-blue-700 transition-all ease-out duration-300">
+              Hire Me
+            </button>
+            <button onClick={() => setShowModal(!showModal)}>
+              <User size={40} className="hover:text-gray-600" />
+            </button>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <div className="md:hidden flex items-center gap-4 pr-4">
+            <button className="p-2 bg-blue-600 text-white rounded-xl w-24 font-bold hover:bg-blue-700 transition-all ease-out duration-300">
+              Hire Me
+            </button>
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="text-gray-600 hover:text-gray-900"
+            >
+              {mobileMenuOpen ? <X size={32} /> : <Menu size={32} />}
+            </button>
+          </div>
         </div>
-        <div className="pr-16 flex items-center gap-10">
-          <button className="p-2 bg-blue-600 text-white rounded-xl w-24 font-bold hover:bg-blue-700 transition-all ease-out duration-300">
-            Hire Me
-          </button>
-          <button
-            onClick={() => {
-              if (!showModal) {
-                setShowModal(true);
-                console.log(showModal);
-              } else if (showModal) {
-                setShowModal(false);
-                console.log(showModal);
-              }
-            }}
-          >
-            <CgProfile size={40} className="hover:text-gray-600" />
-          </button>
-        </div>
+
+        {/* Mobile Navigation */}
+        {mobileMenuOpen && (
+          <div className="md:hidden mt-4 border-t pt-4">
+            <div className="flex flex-col space-y-4 px-4">
+              <a
+                onClick={() => handleClick("home")}
+                className={`${
+                  activePage === "home"
+                    ? "text-blue-600 font-bold underline underline-offset-8"
+                    : "text-black"
+                }`}
+                href="/home"
+              >
+                Home
+              </a>
+              <a
+                onClick={() => handleClick("about")}
+                className={`${
+                  activePage === "about"
+                    ? "text-blue-600 font-bold underline underline-offset-8"
+                    : "text-black"
+                }`}
+                href="/about"
+              >
+                About
+              </a>
+              <a
+                onClick={() => handleClick("projects")}
+                className={`${
+                  activePage === "projects"
+                    ? "text-blue-600 font-bold underline underline-offset-8"
+                    : "text-black"
+                }`}
+                href="/projects"
+              >
+                Projects
+              </a>
+              <a
+                onClick={() => handleClick("skills")}
+                className={`${
+                  activePage === "skills"
+                    ? "text-blue-600 font-bold underline underline-offset-8"
+                    : "text-black"
+                }`}
+                href="/skills"
+              >
+                Skills
+              </a>
+              <a
+                onClick={() => handleClick("contact")}
+                className={`${
+                  activePage === "contact"
+                    ? "text-blue-600 font-bold underline underline-offset-8"
+                    : "text-black"
+                }`}
+                href="/contact"
+              >
+                Contact
+              </a>
+              <button
+                onClick={() => {
+                  setShowModal(!showModal);
+                  setMobileMenuOpen(false);
+                }}
+                className="flex items-center space-x-2 text-gray-600"
+              >
+                <User size={24} />
+                <span>Admin Login</span>
+              </button>
+            </div>
+          </div>
+        )}
       </div>
+
+      {/* Login Modal - Keeping your original modal code */}
       {showModal ? (
         <div className="flex justify-center">
           <div className="flex flex-col justify-center items-center gap-4 bg-white shadow-md w-74 p-10 absolute rounded-xl mt-10 ">
-            <RxCrossCircled
-              onClick={() => {
-                setShowModal(false);
-              }}
-              size={25}
-              className=" text-red-500 absolute right-4 top-4 cursor-pointer hover:text-red-700 bg-white"
-            />
+            <button
+              onClick={() => setShowModal(false)}
+              className="text-red-500 absolute right-4 top-4 cursor-pointer hover:text-red-700 bg-white"
+            >
+              <X size={25} />
+            </button>
 
             <p className="bg-white font-bold underline underline-offset-2">
               Admin log in page
@@ -179,9 +252,7 @@ export default function Header() {
             </div>
           </div>
         </div>
-      ) : (
-        ""
-      )}
+      ) : null}
     </div>
   );
 }

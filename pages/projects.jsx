@@ -21,7 +21,7 @@ export default function Projects() {
             return (
               <div className="bg-white rounded-lg shadow-md overflow-hidden">
                 <img
-                  src=""
+                  src={item.ImgUrl}
                   alt="Infinity running game"
                   className="h-48 w-full object-cover"
                 />
