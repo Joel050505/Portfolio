@@ -3,7 +3,7 @@ import { FaGithubSquare, FaTwitterSquare, FaLinkedin } from "react-icons/fa";
 export default function Footer() {
   return (
     <div>
-      <div className="flex justify-center flex-col gap-4 items-center w-full sticky bottom-0 pt-10">
+      <div className="flex justify-center flex-col gap-4 items-center w-full¨ sm:absolute sticky bottom-0 pt-10 w-full">
         <h4 className="text-2xl font-bold text-center text-gray-800">
           Get in Touch
         </h4>

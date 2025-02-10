@@ -137,7 +137,7 @@ export default function Header() {
         {mobileMenuOpen && (
           <div className="md:hidden mt-4 border-t pt-4">
             <div className="flex flex-col space-y-4 px-4">
-              <a
+              <Link
                 onClick={() => handleClick("home")}
                 className={`${
                   activePage === "home"
@@ -147,8 +147,8 @@ export default function Header() {
                 href="/home"
               >
                 Home
-              </a>
-              <a
+              </Link>
+              <Link
                 onClick={() => handleClick("about")}
                 className={`${
                   activePage === "about"
@@ -158,8 +158,8 @@ export default function Header() {
                 href="/about"
               >
                 About
-              </a>
-              <a
+              </Link>
+              <Link
                 onClick={() => handleClick("projects")}
                 className={`${
                   activePage === "projects"
@@ -169,8 +169,8 @@ export default function Header() {
                 href="/projects"
               >
                 Projects
-              </a>
-              <a
+              </Link>
+              <Link
                 onClick={() => handleClick("skills")}
                 className={`${
                   activePage === "skills"
@@ -180,8 +180,8 @@ export default function Header() {
                 href="/skills"
               >
                 Skills
-              </a>
-              <a
+              </Link>
+              <Link
                 onClick={() => handleClick("contact")}
                 className={`${
                   activePage === "contact"
@@ -191,7 +191,7 @@ export default function Header() {
                 href="/contact"
               >
                 Contact
-              </a>
+              </Link>
               <button
                 onClick={() => {
                   setShowModal(!showModal);
@@ -206,8 +206,7 @@ export default function Header() {
           </div>
         )}
       </div>
-
-      {/* Login Modal - Keeping your original modal code */}
+      {/* // Modal for admin page, need to log in */}
       {showModal ? (
         <div className="flex justify-center">
           <div className="flex flex-col justify-center items-center gap-4 bg-white shadow-md w-74 p-10 absolute rounded-xl mt-10 ">
