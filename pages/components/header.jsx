@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { Menu, X, User } from "lucide-react";
+import { useContext } from "react";
+import Link from "next/link";
 
 export default function Header() {
-  const [activePage, SetActivePage] = useState("home");
   const [showModal, setShowModal] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [loggedIn, setLoggedIn] = useState(false);
+  const [activePage, setActivePage] = useState("home");
 
   const credentials = {
     username: process.env.NEXT_PUBLIC_USERNAME,
@@ -30,7 +32,7 @@ export default function Header() {
   }
 
   function handleClick(page) {
-    SetActivePage(page);
+    setActivePage(page);
     setMobileMenuOpen(false);
   }
 
@@ -46,7 +48,7 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-6 items-center">
-            <a
+            <Link
               onClick={() => handleClick("home")}
               className={`${
                 activePage === "home"
@@ -55,9 +57,11 @@ export default function Header() {
               }`}
               href="/home"
             >
+              {" "}
               Home
-            </a>
-            <a
+            </Link>
+
+            <Link
               onClick={() => handleClick("about")}
               className={`${
                 activePage === "about"
@@ -67,8 +71,9 @@ export default function Header() {
               href="/about"
             >
               About
-            </a>
-            <a
+            </Link>
+
+            <Link
               onClick={() => handleClick("projects")}
               className={`${
                 activePage === "projects"
@@ -78,8 +83,9 @@ export default function Header() {
               href="/projects"
             >
               Projects
-            </a>
-            <a
+            </Link>
+
+            <Link
               onClick={() => handleClick("skills")}
               className={`${
                 activePage === "skills"
@@ -89,8 +95,8 @@ export default function Header() {
               href="/skills"
             >
               Skills
-            </a>
-            <a
+            </Link>
+            <Link
               onClick={() => handleClick("contact")}
               className={`${
                 activePage === "contact"
@@ -100,7 +106,7 @@ export default function Header() {
               href="/contact"
             >
               Contact
-            </a>
+            </Link>
           </div>
 
           {/* Desktop Actions */}
