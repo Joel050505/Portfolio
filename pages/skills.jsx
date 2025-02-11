@@ -1,6 +1,7 @@
 import Footer from "./components/footer";
 import { FaReact, FaHtml5, FaCss3Alt } from "react-icons/fa";
 import { IoLogoJavascript } from "react-icons/io";
+import { RiTailwindCssFill } from "react-icons/ri";
 
 export default function Skills() {
   return (
@@ -55,7 +56,7 @@ export default function Skills() {
             <div className="flex justify-between">
               {" "}
               <span className="flex items-center gap-2">
-                Css
+                CSS
                 <FaCss3Alt size={25} className="text-blue-600" />
               </span>
               <span>80%</span>{" "}
@@ -64,6 +65,20 @@ export default function Skills() {
               <div
                 className="bg-blue-600 h-3 rounded-full"
                 style={{ width: 80 + "%" }}
+              ></div>
+            </div>
+            <div className="flex justify-between">
+              {" "}
+              <span className="flex items-center gap-2">
+                TailwindCSS
+                <RiTailwindCssFill size={25} className="text-cyan-400" />
+              </span>
+              <span>70%</span>{" "}
+            </div>
+            <div className="w-full bg-gray-200 rounded-full h-3">
+              <div
+                className="bg-blue-600 h-3 rounded-full"
+                style={{ width: 70 + "%" }}
               ></div>
             </div>
           </div>

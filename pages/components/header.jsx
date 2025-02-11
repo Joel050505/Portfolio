@@ -1,13 +1,15 @@
 import { useState } from "react";
 import { Menu, X, User } from "lucide-react";
 import { useContext } from "react";
+import PortfolioContext from "../contexts/PortfolioContext";
 import Link from "next/link";
 
 export default function Header() {
+  const { activePage, setActivePage } = useContext(PortfolioContext);
+
   const [showModal, setShowModal] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [loggedIn, setLoggedIn] = useState(false);
-  const [activePage, setActivePage] = useState("home");
 
   const credentials = {
     username: process.env.NEXT_PUBLIC_USERNAME,

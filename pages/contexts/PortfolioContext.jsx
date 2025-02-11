@@ -16,7 +16,7 @@ export const AppProvider = ({ children }) => {
   const [newDescription, setNewDescription] = useState("");
   const [newSkills, setNewSkills] = useState("");
   const [newProjectUrl, setNewProjectUrl] = useState("");
-
+  const [activePage, setActivePage] = useState("home");
   const [projectsText, setProjectsText] = useState([]);
 
   useEffect(() => {
@@ -114,6 +114,8 @@ export const AppProvider = ({ children }) => {
         handleEdit,
         newProjectUrl,
         setNewProjectUrl,
+        activePage,
+        setActivePage,
       }}
     >
       {children}
