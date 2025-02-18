@@ -32,7 +32,7 @@ export default function adminpage() {
     <div>
       <button
         onClick={() => {
-          window.location.href = "/home";
+          window.location.href = "/";
         }}
         className="p-2 bg-red-600 text-white rounded-xl m-2"
       >

@@ -8,6 +8,20 @@
   box-sizing: border-box;
   --tw-bg-opacity: 1;
   background-color: rgb(249 250 251 / var(--tw-bg-opacity, 1)) /* #f9fafb */;
+  min-height: screen;
+}
+
+.mobile-menu {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  opacity: 0;
+  transform: translateY(-10px);
+  visibility: hidden;
+}
+
+.mobile-menu.open {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
 }
 
 /* :root {

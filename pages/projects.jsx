@@ -16,7 +16,7 @@ export default function Projects() {
             My projects
           </h1>{" "}
         </div>
-        <div className="grid md:grid-cols-3 gap-8 p-10 ">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 grid-cols-1 gap-8 p-10 ">
           {projectsText.map((item) => {
             return (
               <div className="bg-white rounded-lg shadow-md overflow-hidden">
@@ -41,54 +41,87 @@ export default function Projects() {
               </div>
             );
           })}
-          <div className="bg-white rounded-lg shadow-md overflow-hidden">
+          <div className="bg-white rounded-lg shadow-md overflow-hidden hover:scale-105 cursor-pointer duration-300 hover:shadow-xl">
             <img
               src=""
               alt="Infinity running game"
               className="h-48 w-full object-cover"
             />
-            <div className="p-6">
-              <h3 className="text-xl font-semibold mb-2">
-                Infinity running game
-              </h3>
+            <div className="p-6 bg-gray-50 min-h-full">
+              <h3 className="text-xl font-semibold mb-2">Willie the runner</h3>
               <p className="text-gray-700">
-                Infinity running game, with Javascript,Html & Css
+                Collect coins, unlock characters, and beat your high score in
+                this fun 2D game. Level up complete missions after mission and
+                get rewarded.
               </p>
               <div className="flex flex-wrap gap-2 mt-2">
-                <span className="bg-blue-50 text-blue-600 px-2 py-1 rounded-full text-xs">
+                <span className="bg-blue-50 text-blue-600 px-2 py-1 rounded-full text-xs font-semibold">
                   Css
                 </span>
-                <span className="bg-blue-50 text-blue-600 px-2 py-1 rounded-full text-xs">
+                <span className="bg-blue-50 text-blue-600 px-2 py-1 rounded-full text-xs font-semibold">
                   Javascript
                 </span>
-                <span className="bg-blue-50 text-blue-600 px-2 py-1 rounded-full text-xs">
+                <span className="bg-blue-50 text-blue-600 px-2 py-1 rounded-full text-xs font-semibold">
                   Html
                 </span>
               </div>
             </div>
           </div>
-          <div className="bg-white rounded-lg shadow-md overflow-hidden">
+          <div className="bg-white rounded-lg shadow-md overflow-hidden hover:scale-105 cursor-pointer duration-300 hover:shadow-xl">
             <img
               src=""
-              alt="Infinity running game"
+              alt="Pokedex project"
               className="h-48 w-full object-cover"
             />
-            <div className="p-6">
-              <h3 className="text-xl font-semibold mb-2">
-                Infinity running game
-              </h3>
+            <div className="p-6 bg-gray-50 min-h-full">
+              <h3 className="text-xl font-semibold mb-2">Pokédex project</h3>
               <p className="text-gray-700">
-                Infinity running game, with Javascript,Html & Css
+                Pokédex where you can bookmark. Listen to pokeCries and check
+                pokémons indeviduallies stats
               </p>
               <div className="flex flex-wrap gap-2 mt-2">
-                <span className="bg-blue-50 text-blue-600 px-2 py-1 rounded-full text-xs">
-                  Css
-                </span>
-                <span className="bg-blue-50 text-blue-600 px-2 py-1 rounded-full text-xs">
-                  Javascript
-                </span>
-                <span className="bg-blue-50 text-blue-600 px-2 py-1 rounded-full text-xs">
+                <span className="bg-blue-50 text-blue-600 px-2 py-1 rounded-full text-xs font-semibold">
                   Html
+                </span>
+                <span className="bg-blue-50 text-blue-600 px-2 py-1 rounded-full text-xs font-semibold">
+                  JavaScript
+                </span>
+                <span className="bg-blue-50 text-blue-600 px-2 py-1 rounded-full text-xs font-semibold">
+                  React
+                </span>
+                <span className="bg-blue-50 text-blue-600 px-2 py-1 rounded-full text-xs font-semibold">
+                  Next js
+                </span>
+                <span className="bg-blue-50 text-blue-600 px-2 py-1 rounded-full text-xs font-semibold">
+                  Tailwind
+                </span>
+              </div>
+            </div>
+          </div>
+          <div className="bg-white rounded-lg shadow-md overflow-hidden hover:scale-105 cursor-pointer duration-300 hover:shadow-xl">
+            <img src="" alt="Quizmaster" className="h-48 w-full object-cover" />
+            <div className="p-6 bg-gray-50 min-h-full">
+              <h3 className="text-xl font-semibold mb-2">QuizMaster</h3>
+              <p className="text-gray-700">
+                A quiz game with questions from different subjects. See result
+                from every game. Check the leaderboard too see your knowledge
+                and compete with yourself
+              </p>
+              <div className="flex flex-wrap gap-2 mt-2">
+                <span className="bg-blue-50 text-blue-600 px-2 py-1 rounded-full text-xs font-semibold">
+                  Html
+                </span>
+                <span className="bg-blue-50 text-blue-600 px-2 py-1 rounded-full text-xs font-semibold">
+                  JavaScript
+                </span>
+                <span className="bg-blue-50 text-blue-600 px-2 py-1 rounded-full text-xs font-semibold">
+                  React
+                </span>
+                <span className="bg-blue-50 text-blue-600 px-2 py-1 rounded-full text-xs font-semibold">
+                  Next js
+                </span>
+                <span className="bg-blue-50 text-blue-600 px-2 py-1 rounded-full text-xs font-semibold">
+                  Tailwind
                 </span>
               </div>
             </div>

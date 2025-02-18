@@ -2,6 +2,7 @@ import Footer from "./components/footer";
 import { FaReact, FaHtml5, FaCss3Alt } from "react-icons/fa";
 import { IoLogoJavascript } from "react-icons/io";
 import { RiTailwindCssFill } from "react-icons/ri";
+import { SiNextdotjs } from "react-icons/si";
 
 export default function Skills() {
   return (
@@ -81,6 +82,20 @@ export default function Skills() {
                 style={{ width: 70 + "%" }}
               ></div>
             </div>
+            <div className="flex justify-between">
+              {" "}
+              <span className="flex items-center gap-2">
+                Next.js
+                <SiNextdotjs size={25} className="text-black" />
+              </span>
+              <span>65%</span>{" "}
+            </div>
+            <div className="w-full bg-gray-200 rounded-full h-3">
+              <div
+                className="bg-blue-600 h-3 rounded-full"
+                style={{ width: 65 + "%" }}
+              ></div>
+            </div>
           </div>
 
           <div>
@@ -89,22 +104,22 @@ export default function Skills() {
             </h2>
             <div className="flex flex-wrap gap-4">
               {" "}
-              <span className="bg-gray-100 text-gray-700 px-4 py-2 rounded-full text-base">
+              <span className="bg-gray-100 text-gray-700 px-4 py-2 rounded-full text-base hover:scale-105 duration-150 cursor-pointer">
                 Problem Solving
               </span>{" "}
-              <span className="bg-gray-100 text-gray-700 px-4 py-2 rounded-full text-base">
+              <span className="bg-gray-100 text-gray-700 px-4 py-2 rounded-full text-base hover:scale-105 duration-150 cursor-pointer">
                 Teamwork
               </span>
-              <span className="bg-gray-100 text-gray-700 px-4 py-2 rounded-full text-base">
+              <span className="bg-gray-100 text-gray-700 px-4 py-2 rounded-full text-base hover:scale-105 duration-150 cursor-pointer">
                 Communication
               </span>
-              <span className="bg-gray-100 text-gray-700 px-4 py-2 rounded-full text-base">
+              <span className="bg-gray-100 text-gray-700 px-4 py-2 rounded-full text-base hover:scale-105 duration-150 cursor-pointer">
                 Creativity
               </span>
-              <span className="bg-gray-100 text-gray-700 px-4 py-2 rounded-full text-base">
+              <span className="bg-gray-100 text-gray-700 px-4 py-2 rounded-full text-base hover:scale-105 duration-150 cursor-pointer">
                 Adaptability
               </span>
-              <span className="bg-gray-100 text-gray-700 px-4 py-2 rounded-full text-base">
+              <span className="bg-gray-100 text-gray-700 px-4 py-2 rounded-full text-base hover:scale-105 duration-150 cursor-pointer">
                 Adaptability
               </span>
             </div>

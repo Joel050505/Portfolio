@@ -3,6 +3,8 @@ import { Menu, X, User } from "lucide-react";
 import { useContext } from "react";
 import PortfolioContext from "../contexts/PortfolioContext";
 import Link from "next/link";
+import { motion } from "motion/react";
+import { easeInOut } from "framer-motion";
 
 export default function Header() {
   const { activePage, setActivePage } = useContext(PortfolioContext);
@@ -50,65 +52,107 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-6 items-center">
-            <Link
-              onClick={() => handleClick("home")}
-              className={`${
-                activePage === "home"
-                  ? "text-blue-600 font-bold underline underline-offset-8"
-                  : "text-black"
-              }`}
-              href="/home"
-            >
-              {" "}
-              Home
-            </Link>
+            <div className="relative">
+              <motion.div
+                initial={{ width: 0 }}
+                animate={{ width: activePage === "home" ? "100%" : 0 }}
+                transition={{ duration: 0.3, ease: easeInOut }}
+                className="absolute bottom-0 left-0 bg-blue-600 h-[2px]"
+              />
+              <Link
+                onClick={() => handleClick("home")}
+                className={`${
+                  activePage === "home"
+                    ? "text-blue-600 font-bold scale-105 transition-all duration-300"
+                    : "text-black transition-all duration-300"
+                }`}
+                href="/"
+              >
+                {" "}
+                <span> Home </span>
+              </Link>
+            </div>
 
-            <Link
-              onClick={() => handleClick("about")}
-              className={`${
-                activePage === "about"
-                  ? "text-blue-600 font-bold underline underline-offset-8"
-                  : "text-black"
-              }`}
-              href="/about"
-            >
-              About
-            </Link>
+            <div className="relative">
+              <motion.div
+                initial={{ width: 0 }}
+                animate={{ width: activePage === "about" ? "100%" : 0 }}
+                transition={{ duration: 0.3, ease: easeInOut }}
+                className="absolute bottom-0 left-0 bg-blue-600 h-[2px]"
+              />
+              <Link
+                onClick={() => handleClick("about")}
+                className={`${
+                  activePage === "about"
+                    ? "text-blue-600 font-bold  scale-105 transition-all duration-300"
+                    : "text-black transition-all duration-300"
+                }`}
+                href="/about"
+              >
+                About
+              </Link>
+            </div>
+            <div className="relative">
+              <motion.div
+                initial={{ width: 0 }}
+                animate={{ width: activePage === "projects" ? "100%" : 0 }}
+                transition={{ duration: 0.3, ease: easeInOut }}
+                className="absolute bottom-0 left-0 bg-blue-600 h-[2px]"
+              />
+              <Link
+                onClick={() => handleClick("projects")}
+                className={`${
+                  activePage === "projects"
+                    ? "text-blue-600 font-bold scale-105 transition-all duration-300"
+                    : "text-black transition-all duration-300"
+                }`}
+                href="/projects"
+              >
+                Projects
+              </Link>
+            </div>
 
-            <Link
-              onClick={() => handleClick("projects")}
-              className={`${
-                activePage === "projects"
-                  ? "text-blue-600 font-bold underline underline-offset-8"
-                  : "text-black"
-              }`}
-              href="/projects"
-            >
-              Projects
-            </Link>
+            <div className="relative">
+              <motion.div
+                initial={{ width: 0 }}
+                animate={{ width: activePage === "skills" ? "100%" : 0 }}
+                transition={{ duration: 0.3, ease: easeInOut }}
+                className="absolute bottom-0 left-0 bg-blue-600 h-[2px]"
+              />
 
-            <Link
-              onClick={() => handleClick("skills")}
-              className={`${
-                activePage === "skills"
-                  ? "text-blue-600 font-bold underline underline-offset-8"
-                  : "text-black"
-              }`}
-              href="/skills"
-            >
-              Skills
-            </Link>
-            <Link
-              onClick={() => handleClick("contact")}
-              className={`${
-                activePage === "contact"
-                  ? "text-blue-600 font-bold underline underline-offset-8"
-                  : "text-black"
-              }`}
-              href="/contact"
-            >
-              Contact
-            </Link>
+              <Link
+                onClick={() => handleClick("skills")}
+                className={`${
+                  activePage === "skills"
+                    ? "text-blue-600 font-bold scale-105 transition-all duration-300"
+                    : "text-black transition-all duration-300"
+                }`}
+                href="/skills"
+              >
+                Skills
+              </Link>
+            </div>
+
+            <div className="relative">
+              <motion.div
+                initial={{ width: 0 }}
+                animate={{ width: activePage === "contact" ? "100%" : 0 }}
+                transition={{ duration: 0.3, ease: easeInOut }}
+                className="absolute bottom-0 left-0 bg-blue-600 h-[2px]"
+              />
+
+              <Link
+                onClick={() => handleClick("contact")}
+                className={`${
+                  activePage === "contact"
+                    ? "text-blue-600 font-bold scale-105 transition-all duration-300"
+                    : "text-black transition-all duration-300"
+                }`}
+                href="/contact"
+              >
+                Contact
+              </Link>
+            </div>
           </div>
 
           {/* Desktop Actions */}
@@ -137,8 +181,14 @@ export default function Header() {
 
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
-          <div className="md:hidden mt-4 border-t pt-4">
-            <div className="flex flex-col space-y-4 px-4">
+          <motion.div
+            className="md:hidden mt-4 border-t pt-4"
+            initial={{ opacity: 0, y: -30 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
+          >
+            <motion.div className="flex flex-col space-y-4 px-4">
               <Link
                 onClick={() => handleClick("home")}
                 className={`${
@@ -146,7 +196,7 @@ export default function Header() {
                     ? "text-blue-600 font-bold underline underline-offset-8"
                     : "text-black"
                 }`}
-                href="/home"
+                href="/"
               >
                 Home
               </Link>
@@ -204,8 +254,8 @@ export default function Header() {
                 <User size={24} />
                 <span>Admin Login</span>
               </button>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         )}
       </div>
       {/* // Modal for admin page, need to log in */}

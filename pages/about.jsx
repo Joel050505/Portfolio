@@ -11,9 +11,9 @@ export default function AboutPage() {
           <h1 className="text-4xl font-bold text-gray-800">About Me</h1>
           <p>
             I'm a passionate developer with a love for creating innovative web
-            solutions that make a real difference. With 5+ years of experience
-            in full-stack development, I specialize in turning complex problems
-            into elegant, user-friendly applications.
+            solutions that make a real difference. With 1+ years of experience
+            in full-stack/Front-end development, I specialize in turning complex
+            problems into elegant, user-friendly applications.
           </p>
           <p>
             My approach combines technical expertise with creative
