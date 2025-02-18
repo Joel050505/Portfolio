@@ -96,7 +96,6 @@ export default function Contact() {
           </div>
         </div>
       </form>
-      <Footer />
     </div>
   );
 }

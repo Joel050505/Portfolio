@@ -12,7 +12,7 @@ export default function Projects() {
       <div className="mt-10 flex flex-col container mx-auto mb-4">
         <div>
           {" "}
-          <h1 className="text-center text-4xl font-bold text-gray-800">
+          <h1 className="text-center text-4xl font-bold text-gray-800 mb-4">
             My projects
           </h1>{" "}
         </div>
@@ -128,7 +128,6 @@ export default function Projects() {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 }
