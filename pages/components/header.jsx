@@ -160,9 +160,9 @@ export default function Header() {
             <button className="p-2 bg-blue-600 text-white rounded-xl w-24 font-bold hover:bg-blue-700 transition-all ease-out duration-300">
               Hire Me
             </button>
-            <button onClick={() => setShowModal(!showModal)}>
+            {/* <button onClick={() => setShowModal(!showModal)}>
               <User size={40} className="hover:text-gray-600" />
-            </button>
+            </button> */}
           </div>
 
           {/* Mobile Menu Button */}
@@ -244,7 +244,7 @@ export default function Header() {
               >
                 Contact
               </Link>
-              <button
+              {/* <button
                 onClick={() => {
                   setShowModal(!showModal);
                   setMobileMenuOpen(false);
@@ -253,7 +253,7 @@ export default function Header() {
               >
                 <User size={24} />
                 <span>Admin Login</span>
-              </button>
+              </button> */}
             </motion.div>
           </motion.div>
         )}
